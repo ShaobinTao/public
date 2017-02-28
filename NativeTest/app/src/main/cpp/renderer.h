@@ -20,11 +20,27 @@
 #include <pthread.h>
 #include <EGL/egl.h> // requires ndk r5 or newer
 #include <GLES/gl.h>
+#define GL_GLEXT_PROTOTYPES
+#include <gles2/gl2ext.h>
 
 
 class Renderer {
 
 public:
+    PFNGLGENQUERIESEXTPROC  glGenQueriesEXT;
+    PFNGLDELETEQUERIESEXTPROC   glDeleteQueriesEXT;
+    PFNGLISQUERYEXTPROC    glIsQueryEXT;
+    PFNGLBEGINQUERYEXTPROC    glBeginQueryEXT;
+    PFNGLENDQUERYEXTPROC    glEndQueryEXT;
+    PFNGLQUERYCOUNTEREXTPROC    glQueryCounterEXT;
+    PFNGLGETQUERYIVEXTPROC    glGetQueryivEXT;
+    PFNGLGETQUERYOBJECTIVEXTPROC    glGetQueryObjectivEXT;
+    PFNGLGETQUERYOBJECTUIVEXTPROC    glGetQueryObjectuivEXT;
+    PFNGLGETQUERYOBJECTI64VEXTPROC    glGetQueryObjecti64vEXT;
+    PFNGLGETQUERYOBJECTUI64VEXTPROC    glGetQueryObjectui64vEXT;
+    uint    queries[2];
+
+
     Renderer();
     virtual ~Renderer();
 

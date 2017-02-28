@@ -237,6 +237,21 @@ bool Renderer::initialize()
     glLoadIdentity();
     glFrustumf(-ratio, ratio, -1, 1, 1, 10);
 
+// load extensions
+    glGenQueriesEXT = (PFNGLGENQUERIESEXTPROC) eglGetProcAddress("glGenQueriesEXT");
+    glDeleteQueriesEXT = (PFNGLDELETEQUERIESEXTPROC) eglGetProcAddress("glDeleteQueriesEXT");
+    glIsQueryEXT = (PFNGLISQUERYEXTPROC) eglGetProcAddress("glIsQueryEXT");
+    glBeginQueryEXT = (PFNGLBEGINQUERYEXTPROC) eglGetProcAddress("glBeginQueryEXT");
+    glEndQueryEXT = (PFNGLENDQUERYEXTPROC) eglGetProcAddress("glEndQueryEXT");
+    glQueryCounterEXT = (PFNGLQUERYCOUNTEREXTPROC) eglGetProcAddress("glQueryCounterEXT");
+    glGetQueryivEXT = (PFNGLGETQUERYIVEXTPROC) eglGetProcAddress("glGetQueryivEXT");
+
+    glGetQueryObjectivEXT = (PFNGLGETQUERYOBJECTIVEXTPROC) eglGetProcAddress("glGetQueryObjectivEXT");
+    glGetQueryObjectuivEXT = (PFNGLGETQUERYOBJECTUIVEXTPROC) eglGetProcAddress("glGetQueryObjectuivEXT");
+    glGetQueryObjecti64vEXT = (PFNGLGETQUERYOBJECTI64VEXTPROC) eglGetProcAddress("glGetQueryObjecti64vEXT");
+    glGetQueryObjectui64vEXT = (PFNGLGETQUERYOBJECTUI64VEXTPROC) eglGetProcAddress("glGetQueryObjectui64vEXT");
+    glGenQueriesEXT(2, &queries[0]);
+
     return true;
 }
 
@@ -247,7 +262,7 @@ void Renderer::destroy() {
     eglDestroyContext(_display, _context);
     eglDestroySurface(_display, _surface);
     eglTerminate(_display);
-    
+
     _display = EGL_NO_DISPLAY;
     _surface = EGL_NO_SURFACE;
     _context = EGL_NO_CONTEXT;
@@ -257,6 +272,14 @@ void Renderer::destroy() {
 
 void Renderer::drawFrame()
 {
+
+    LOG_INFO("0 %d", glGetError());
+    glBeginQueryEXT(GL_TIME_ELAPSED_EXT, queries[0]);
+    LOG_INFO("1 %d", glGetError());
+
+
+
+
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
     glMatrixMode(GL_MODELVIEW);
@@ -272,6 +295,21 @@ void Renderer::drawFrame()
     glVertexPointer(3, GL_FIXED, 0, vertices);
     glColorPointer(4, GL_FIXED, 0, colors);
     glDrawElements(GL_TRIANGLES, 36, GL_UNSIGNED_BYTE, indices);
+
+    glEndQueryEXT(GL_TIME_ELAPSED_EXT);
+    LOG_INFO("2 %d", glGetError());
+
+    GLint available = 0;
+    while (!available) {
+        glGetQueryObjectivEXT(queries[0], GL_QUERY_RESULT_AVAILABLE_EXT, &available);
+        LOG_INFO("3 %d", glGetError());
+    }
+
+    GLuint64 timeElapsed = 0;
+    glGetQueryObjectui64vEXT(queries[0], GL_QUERY_RESULT_EXT, &timeElapsed);
+    LOG_INFO("4 %d", glGetError());
+    LOG_INFO("timeElapsed is %d", timeElapsed);
+
 
     _angle += 1.2f;    
 }
