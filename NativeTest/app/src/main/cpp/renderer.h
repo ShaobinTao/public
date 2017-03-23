@@ -38,7 +38,7 @@ public:
     PFNGLGETQUERYOBJECTUIVEXTPROC    glGetQueryObjectuivEXT;
     PFNGLGETQUERYOBJECTI64VEXTPROC    glGetQueryObjecti64vEXT;
     PFNGLGETQUERYOBJECTUI64VEXTPROC    glGetQueryObjectui64vEXT;
-    uint    queries[2];
+    GLuint     queries[2];
 
 
     Renderer();
