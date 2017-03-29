@@ -175,10 +175,13 @@ bool Renderer::initialize()
         LOG_ERROR("eglGetDisplay() returned error %d", eglGetError());
         return false;
     }
-    if (!eglInitialize(display, 0, 0)) {
+
+    EGLint major, minor;
+    if (!eglInitialize(display, &major, &minor)) {
         LOG_ERROR("eglInitialize() returned error %d", eglGetError());
         return false;
     }
+    LOG_INFO("STAO major=%d %d", major, minor);
 
     if (!eglChooseConfig(display, attribs, &config, 1, &numConfigs)) {
         LOG_ERROR("eglChooseConfig() returned error %d", eglGetError());
@@ -199,18 +202,27 @@ bool Renderer::initialize()
         destroy();
         return false;
     }
-    
-    if (!(context = eglCreateContext(display, config, 0, 0))) {
+
+    const EGLint attribs_context[] = {
+            EGL_CONTEXT_CLIENT_VERSION, 2,
+            EGL_NONE
+    };
+
+
+    LOG_INFO("100 STAO %d", glGetError());
+    if (!(context = eglCreateContext(display, config, 0, attribs_context))) {
         LOG_ERROR("eglCreateContext() returned error %d", eglGetError());
         destroy();
         return false;
     }
-    
+    LOG_INFO("101 STAO %d", glGetError());
+
     if (!eglMakeCurrent(display, surface, surface, context)) {
         LOG_ERROR("eglMakeCurrent() returned error %d", eglGetError());
         destroy();
         return false;
     }
+    LOG_INFO("102 STAO %d", glGetError());
 
     if (!eglQuerySurface(display, surface, EGL_WIDTH, &width) ||
         !eglQuerySurface(display, surface, EGL_HEIGHT, &height)) {
@@ -218,24 +230,26 @@ bool Renderer::initialize()
         destroy();
         return false;
     }
+    LOG_INFO("103 STAO %d", glGetError());
 
     _display = display;
     _surface = surface;
     _context = context;
 
     glDisable(GL_DITHER);
-    glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_FASTEST);
+    glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_FASTEST);     //obsolete for 3.x
     glClearColor(0, 0, 0, 0);
     glEnable(GL_CULL_FACE);
-    glShadeModel(GL_SMOOTH);
+    glShadeModel(GL_SMOOTH);                                //obsolete for 3.x
     glEnable(GL_DEPTH_TEST);
-    
     glViewport(0, 0, width, height);
 
     ratio = (GLfloat) width / height;
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
     glFrustumf(-ratio, ratio, -1, 1, 1, 10);
+
+    LOG_INFO("104 STAO %d", glGetError());
 
 // load extensions
     glGenQueriesEXT = (PFNGLGENQUERIESEXTPROC) eglGetProcAddress("glGenQueriesEXT");
@@ -246,11 +260,17 @@ bool Renderer::initialize()
     glQueryCounterEXT = (PFNGLQUERYCOUNTEREXTPROC) eglGetProcAddress("glQueryCounterEXT");
     glGetQueryivEXT = (PFNGLGETQUERYIVEXTPROC) eglGetProcAddress("glGetQueryivEXT");
 
+    LOG_INFO("105 STAO %d", glGetError());
+
     glGetQueryObjectivEXT = (PFNGLGETQUERYOBJECTIVEXTPROC) eglGetProcAddress("glGetQueryObjectivEXT");
     glGetQueryObjectuivEXT = (PFNGLGETQUERYOBJECTUIVEXTPROC) eglGetProcAddress("glGetQueryObjectuivEXT");
     glGetQueryObjecti64vEXT = (PFNGLGETQUERYOBJECTI64VEXTPROC) eglGetProcAddress("glGetQueryObjecti64vEXT");
     glGetQueryObjectui64vEXT = (PFNGLGETQUERYOBJECTUI64VEXTPROC) eglGetProcAddress("glGetQueryObjectui64vEXT");
-    glGenQueriesEXT(2, &queries[0]);
+    LOG_INFO("113 STAO %d", glGetError());
+
+    glGenQueriesEXT(2, queries);
+
+    LOG_INFO("114 STAO %d %x", glGetError(), glGenQueriesEXT);
 
     return true;
 }
@@ -272,16 +292,10 @@ void Renderer::destroy() {
 
 void Renderer::drawFrame()
 {
-
-    LOG_INFO("0 %d", glGetError());
     glBeginQueryEXT(GL_TIME_ELAPSED_EXT, queries[0]);
-    LOG_INFO("1 %d", glGetError());
-
-
-
-
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
+/*
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
     glTranslatef(0, 0, -3.0f);
@@ -290,26 +304,27 @@ void Renderer::drawFrame()
 
     glEnableClientState(GL_VERTEX_ARRAY);
     glEnableClientState(GL_COLOR_ARRAY);
-    
+
+    LOG_INFO("STAO4 4 %d", glGetError());
+
     glFrontFace(GL_CW);
     glVertexPointer(3, GL_FIXED, 0, vertices);
     glColorPointer(4, GL_FIXED, 0, colors);
     glDrawElements(GL_TRIANGLES, 36, GL_UNSIGNED_BYTE, indices);
+*/
 
     glEndQueryEXT(GL_TIME_ELAPSED_EXT);
-    LOG_INFO("2 %d", glGetError());
 
     GLint available = 0;
     while (!available) {
         glGetQueryObjectivEXT(queries[0], GL_QUERY_RESULT_AVAILABLE_EXT, &available);
-        LOG_INFO("3 %d", glGetError());
+
+//        LOG_INFO("STAO4 available=%d, e = %d", available, glGetError());
     }
 
     GLuint64 timeElapsed = 0;
     glGetQueryObjectui64vEXT(queries[0], GL_QUERY_RESULT_EXT, &timeElapsed);
-    LOG_INFO("4 %d", glGetError());
-    LOG_INFO("timeElapsed is %d", timeElapsed);
-
+    LOG_INFO("STAO4 timeElapsed is %d, e=%d", timeElapsed, glGetError());
 
     _angle += 1.2f;    
 }
