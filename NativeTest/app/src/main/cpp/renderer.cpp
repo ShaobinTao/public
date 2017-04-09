@@ -58,6 +58,9 @@ GLubyte indices[] = {
 };
 
 
+
+
+
 Renderer::Renderer()
     : _msg(MSG_NONE), _display(0), _surface(0), _context(0), _angle(0)
 {
@@ -293,25 +296,44 @@ void Renderer::destroy() {
 void Renderer::drawFrame()
 {
     glBeginQueryEXT(GL_TIME_ELAPSED_EXT, queries[0]);
+
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-/*
-    glMatrixMode(GL_MODELVIEW);
-    glLoadIdentity();
-    glTranslatef(0, 0, -3.0f);
-    glRotatef(_angle, 0, 1, 0);
-    glRotatef(_angle*0.25f, 1, 0, 0);
 
-    glEnableClientState(GL_VERTEX_ARRAY);
-    glEnableClientState(GL_COLOR_ARRAY);
 
-    LOG_INFO("STAO4 4 %d", glGetError());
 
-    glFrontFace(GL_CW);
-    glVertexPointer(3, GL_FIXED, 0, vertices);
-    glColorPointer(4, GL_FIXED, 0, colors);
-    glDrawElements(GL_TRIANGLES, 36, GL_UNSIGNED_BYTE, indices);
-*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     glEndQueryEXT(GL_TIME_ELAPSED_EXT);
 
