@@ -16,6 +16,16 @@
 #include <malloc.h>
 #include <memory.h>
 #include <tchar.h>
+#include <vector>
+#include <cassert>
+#include <algorithm>
+#include <fstream>
 
+extern HINSTANCE	g_hInst;                                // current instance
+extern HWND			g_windowHandle;
+
+
+#define VK_USE_PLATFORM_WIN32_KHR
+#include <vulkan\vulkan.h>
 
 // TODO: reference additional headers your program requires here
