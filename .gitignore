@@ -40,3 +40,4 @@ captures/
 *.jks
 VulkanHelloTri/.vs/
 VulkanHelloTri/Debug/
+VulkanHelloTriAndroid/.idea/
