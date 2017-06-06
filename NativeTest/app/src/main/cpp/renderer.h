@@ -85,7 +85,7 @@ private:
 
 
 
-
+/*
     static float vertCoords[] = {
             -1, 1, 0,
             -1, -1, 0,
@@ -134,7 +134,7 @@ private final FloatBuffer textureBuffer;
     final int COORDS_PER_VERTEX = 3;
     final int vertexStride = COORDS_PER_VERTEX * 4;
 
-
+*/
 
 
 
