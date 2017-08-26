@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Fullscreen and Pointerlock Test</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <script type="text/javascript">
+            var requestFullScreen = function(elem){
+                    if(elem.requestFullScreen) elem.requestFullScreen();
+                    else if(elem.mozRequestFullScreen) elem.mozRequestFullScreen();
+                    else if(elem.webkitRequestFullScreen) elem.webkitRequestFullScreen();
+            }
+            
+            var requestPointerLock = function(elem){
+                    if(elem.requestPointerLock) elem.requestPointerLock();
+                    else if(elem.mozRequestPointerLock) elem.mozRequestPointerLock();
+                    else if(elem.webkitRequestPointerLock) elem.webkitRequestPointerLock();
+            }
+
+            var id = function(selector){
+                return document.getElementById(selector)
+            };
+
+            window.onload = function(){
+//                var container = id('fullscreen');
+                var container = id('displayNode');
+            
+                id('fullscreen').onclick = function(){
+                    requestFullScreen(container);
+                };
+
+                id('pointerlock').onclick = function(){
+                    requestPointerLock(container);
+                };
+
+                id('fullscreen-pointerlock').onclick = function(){
+                    requestFullScreen(container);
+                    requestPointerLock(container);
+                };
+            }
+        </script>
+    </head>
+    <body>
+        <div id="displayNode">
+            <button id="fullscreen">Fullscreen</button>
+            <button id="pointerlock">Pointerlock</button>
+            <button id="fullscreen-pointerlock">Fullscreen and Pointerlock</button>
+         </div>
+        <div id="element">Element</div>
+    </body>
+</html>
+
