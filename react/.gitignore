@@ -42,4 +42,6 @@ captures/
 
 # TEMP directories or files
 node_modules/
+bundle.css
+bundle.js
 

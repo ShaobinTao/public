@@ -7,3 +7,5 @@ class Logo extends React.Component {
         return <div className="Logo" />;
     }
 }
+
+export default Logo

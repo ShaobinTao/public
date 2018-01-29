@@ -2,7 +2,7 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Logo from './component/Logo';
+import Logo from './components/Logo';
 
 
 ReactDOM.render( 
