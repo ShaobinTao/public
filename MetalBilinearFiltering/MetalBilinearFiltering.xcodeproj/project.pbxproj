@@ -1,0 +1,348 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		81456FFE24E767D600B53EFE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81456FFD24E767D600B53EFE /* AppDelegate.swift */; };
+		8145700024E767D600B53EFE /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81456FFF24E767D600B53EFE /* GameViewController.swift */; };
+		8145700324E767D600B53EFE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8145700124E767D600B53EFE /* Main.storyboard */; };
+		8145700524E767D600B53EFE /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 81456FF224E767D600B53EFE /* Shaders.metal */; };
+		8145700624E767D600B53EFE /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81456FF324E767D600B53EFE /* Renderer.swift */; };
+		8145700724E767D600B53EFE /* ShaderTypes.h in Resources */ = {isa = PBXBuildFile; fileRef = 81456FF424E767D600B53EFE /* ShaderTypes.h */; };
+		8145700824E767D600B53EFE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81456FF524E767D600B53EFE /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		81456FF224E767D600B53EFE /* Shaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
+		81456FF324E767D600B53EFE /* Renderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Renderer.swift; sourceTree = "<group>"; };
+		81456FF424E767D600B53EFE /* ShaderTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShaderTypes.h; sourceTree = "<group>"; };
+		81456FF524E767D600B53EFE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		81456FFA24E767D600B53EFE /* MetalBilinearFiltering.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MetalBilinearFiltering.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		81456FFD24E767D600B53EFE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		81456FFF24E767D600B53EFE /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		8145700224E767D600B53EFE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8145700424E767D600B53EFE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8145700E24E76CD600B53EFE /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		81456FF724E767D600B53EFE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		81456FEC24E767D600B53EFE = {
+			isa = PBXGroup;
+			children = (
+				8145700E24E76CD600B53EFE /* README.md */,
+				81456FF124E767D600B53EFE /* MetalBilinearFiltering Shared */,
+				81456FFC24E767D600B53EFE /* MetalBilinearFiltering macOS */,
+				81456FFB24E767D600B53EFE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		81456FF124E767D600B53EFE /* MetalBilinearFiltering Shared */ = {
+			isa = PBXGroup;
+			children = (
+				81456FF224E767D600B53EFE /* Shaders.metal */,
+				81456FF324E767D600B53EFE /* Renderer.swift */,
+				81456FF424E767D600B53EFE /* ShaderTypes.h */,
+				81456FF524E767D600B53EFE /* Assets.xcassets */,
+			);
+			path = "MetalBilinearFiltering Shared";
+			sourceTree = "<group>";
+		};
+		81456FFB24E767D600B53EFE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				81456FFA24E767D600B53EFE /* MetalBilinearFiltering.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		81456FFC24E767D600B53EFE /* MetalBilinearFiltering macOS */ = {
+			isa = PBXGroup;
+			children = (
+				81456FFD24E767D600B53EFE /* AppDelegate.swift */,
+				81456FFF24E767D600B53EFE /* GameViewController.swift */,
+				8145700124E767D600B53EFE /* Main.storyboard */,
+				8145700424E767D600B53EFE /* Info.plist */,
+			);
+			path = "MetalBilinearFiltering macOS";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		81456FF924E767D600B53EFE /* MetalBilinearFiltering macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8145700B24E767D600B53EFE /* Build configuration list for PBXNativeTarget "MetalBilinearFiltering macOS" */;
+			buildPhases = (
+				81456FF624E767D600B53EFE /* Sources */,
+				81456FF724E767D600B53EFE /* Frameworks */,
+				81456FF824E767D600B53EFE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "MetalBilinearFiltering macOS";
+			productName = "MetalBilinearFiltering macOS";
+			productReference = 81456FFA24E767D600B53EFE /* MetalBilinearFiltering.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		81456FED24E767D600B53EFE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1160;
+				LastUpgradeCheck = 1160;
+				ORGANIZATIONNAME = JazzG;
+				TargetAttributes = {
+					81456FF924E767D600B53EFE = {
+						CreatedOnToolsVersion = 11.6;
+					};
+				};
+			};
+			buildConfigurationList = 81456FF024E767D600B53EFE /* Build configuration list for PBXProject "MetalBilinearFiltering" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 81456FEC24E767D600B53EFE;
+			productRefGroup = 81456FFB24E767D600B53EFE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				81456FF924E767D600B53EFE /* MetalBilinearFiltering macOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		81456FF824E767D600B53EFE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8145700324E767D600B53EFE /* Main.storyboard in Resources */,
+				8145700824E767D600B53EFE /* Assets.xcassets in Resources */,
+				8145700724E767D600B53EFE /* ShaderTypes.h in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		81456FF624E767D600B53EFE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8145700624E767D600B53EFE /* Renderer.swift in Sources */,
+				8145700524E767D600B53EFE /* Shaders.metal in Sources */,
+				8145700024E767D600B53EFE /* GameViewController.swift in Sources */,
+				81456FFE24E767D600B53EFE /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		8145700124E767D600B53EFE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8145700224E767D600B53EFE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8145700924E767D600B53EFE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		8145700A24E767D600B53EFE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		8145700C24E767D600B53EFE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "MetalBilinearFiltering macOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = test.MetalBilinearFiltering;
+				PRODUCT_NAME = MetalBilinearFiltering;
+				SDKROOT = macosx;
+				SWIFT_OBJC_BRIDGING_HEADER = "MetalBilinearFiltering Shared/ShaderTypes.h";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		8145700D24E767D600B53EFE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "MetalBilinearFiltering macOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = test.MetalBilinearFiltering;
+				PRODUCT_NAME = MetalBilinearFiltering;
+				SDKROOT = macosx;
+				SWIFT_OBJC_BRIDGING_HEADER = "MetalBilinearFiltering Shared/ShaderTypes.h";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		81456FF024E767D600B53EFE /* Build configuration list for PBXProject "MetalBilinearFiltering" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8145700924E767D600B53EFE /* Debug */,
+				8145700A24E767D600B53EFE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8145700B24E767D600B53EFE /* Build configuration list for PBXNativeTarget "MetalBilinearFiltering macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8145700C24E767D600B53EFE /* Debug */,
+				8145700D24E767D600B53EFE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 81456FED24E767D600B53EFE /* Project object */;
+}
