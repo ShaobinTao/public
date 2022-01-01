@@ -59,8 +59,24 @@ class Renderer: NSObject, MTKViewDelegate {
     public let device: MTLDevice
     let commandQueue: MTLCommandQueue
     var dynamicUniformBuffer: MTLBuffer
-    var pipelineState: MTLRenderPipelineState
-    var depthState: MTLDepthStencilState
+    var pipelineStateSet3: MTLRenderPipelineState
+//    var pipelineState: MTLRenderPipelineState
+
+    var set3VertexBuffer: MTLBuffer
+    
+    /* there are totally two areas for the scene:
+            area1: one center area
+            area2: other area
+     
+        set area2 stencil to 3 =>
+        render only area1 and set stencil to 2 =>
+        render only area2 and test various stencil options
+    */
+    
+    var depthStateSet3: MTLDepthStencilState            // set area2 stencil to 3
+    var depthStateSet2: MTLDepthStencilState            // first pass: set one area to
+    var depthStateRender3: MTLDepthStencilState
+    
     var colorMap: MTLTexture
     
     let inFlightSemaphore = DispatchSemaphore(value: maxBuffersInFlight)
@@ -81,6 +97,19 @@ class Renderer: NSObject, MTKViewDelegate {
         self.device = metalKitView.device!
         guard let queue = self.device.makeCommandQueue() else { return nil }
         self.commandQueue = queue
+
+        // set3 vertex data. 0s are padding
+        let vertexDataSet3: [Float] = [
+            -0.5,  0.5,
+            -0.5, -0.5,
+             0.5,  0.5,
+             0.5,  0.5,
+            -0.5, -0.5,
+             0.5, -0.5
+        ]
+
+        let dataSize = vertexDataSet3.count * MemoryLayout<Float>.size
+        set3VertexBuffer = self.device.makeBuffer(bytes: vertexDataSet3, length: dataSize, options: [])!
         
         let uniformBufferSize = alignedUniformsSize * maxBuffersInFlight
         
@@ -97,20 +126,38 @@ class Renderer: NSObject, MTKViewDelegate {
         
         let mtlVertexDescriptor = Renderer.buildMetalVertexDescriptor()
         
-        do {
-            pipelineState = try Renderer.buildRenderPipelineWithDevice(device: device,
-                                                                       metalKitView: metalKitView,
-                                                                       mtlVertexDescriptor: mtlVertexDescriptor)
-        } catch {
-            print("Unable to compile render pipeline state.  Error info: \(error)")
-            return nil
-        }
+        // depthStateSet3, ref value 3
+        let stencilDescriptor = MTLStencilDescriptor()
+        stencilDescriptor.stencilCompareFunction = .always
+        stencilDescriptor.depthStencilPassOperation = .replace
         
         let depthStateDescriptor = MTLDepthStencilDescriptor()
+        depthStateDescriptor.depthCompareFunction = .always
+        depthStateDescriptor.isDepthWriteEnabled = false
+        depthStateDescriptor.backFaceStencil = stencilDescriptor
+        depthStateDescriptor.frontFaceStencil = stencilDescriptor
+        guard let state3 = device.makeDepthStencilState(descriptor:depthStateDescriptor) else { return nil }
+        depthStateSet3 = state3
+
+        // depthStateSet2
+        stencilDescriptor.stencilCompareFunction = .equal
+        stencilDescriptor.depthStencilPassOperation = .replace
+        stencilDescriptor.readMask = 0b11
+        
         depthStateDescriptor.depthCompareFunction = MTLCompareFunction.less
         depthStateDescriptor.isDepthWriteEnabled = true
-        guard let state = device.makeDepthStencilState(descriptor:depthStateDescriptor) else { return nil }
-        depthState = state
+        guard let state2 = device.makeDepthStencilState(descriptor:depthStateDescriptor) else { return nil }
+        depthStateSet2 = state2
+
+        // depthStateRender3
+        stencilDescriptor.stencilCompareFunction = .equal
+        stencilDescriptor.depthStencilPassOperation = .replace
+        stencilDescriptor.readMask = 0b11
+        
+        depthStateDescriptor.depthCompareFunction = MTLCompareFunction.less
+        depthStateDescriptor.isDepthWriteEnabled = true
+        guard let state4 = device.makeDepthStencilState(descriptor:depthStateDescriptor) else { return nil }
+        depthStateRender3 = state4
         
         do {
             mesh = try Renderer.buildMesh(device: device, mtlVertexDescriptor: mtlVertexDescriptor)
@@ -125,9 +172,27 @@ class Renderer: NSObject, MTKViewDelegate {
             print("Unable to load texture. Error info: \(error)")
             return nil
         }
+
+        let library = device.makeDefaultLibrary()
+
+        // pipelineStateSet3
+        let vertexFunctionSet3 = library?.makeFunction(name: "vertexShaderSet3")
+        let fragmentFunctionSet3 = library?.makeFunction(name: "fragmentShaderSet3")
+        let pipelineDescriptor = MTLRenderPipelineDescriptor()
+        pipelineDescriptor.label = "RenderPipelineSet3"
+        pipelineDescriptor.sampleCount = metalKitView.sampleCount
+        pipelineDescriptor.vertexFunction = vertexFunctionSet3
+        pipelineDescriptor.fragmentFunction = fragmentFunctionSet3
+        pipelineDescriptor.vertexDescriptor = Renderer.buildMetalVertexDescriptorSet3()
+        pipelineDescriptor.inputPrimitiveTopology = .triangle
         
+        pipelineDescriptor.colorAttachments[0].pixelFormat = metalKitView.colorPixelFormat
+        pipelineDescriptor.depthAttachmentPixelFormat = metalKitView.depthStencilPixelFormat
+        pipelineDescriptor.stencilAttachmentPixelFormat = metalKitView.depthStencilPixelFormat
+        
+        try! pipelineStateSet3 = device.makeRenderPipelineState(descriptor: pipelineDescriptor)
+
         super.init()
-        
     }
     
     class func buildMetalVertexDescriptor() -> MTLVertexDescriptor {
@@ -154,14 +219,34 @@ class Renderer: NSObject, MTKViewDelegate {
         
         return mtlVertexDescriptor
     }
-    
-    class func buildRenderPipelineWithDevice(device: MTLDevice,
+
+    class func buildMetalVertexDescriptorSet3() -> MTLVertexDescriptor {
+        // Create a Metal vertex descriptor specifying how vertices will by laid out for input into our render
+        //   pipeline and how we'll layout our Model IO vertices
+        
+        let mtlVertexDescriptor = MTLVertexDescriptor()
+        
+        mtlVertexDescriptor.attributes[0].format = MTLVertexFormat.float2
+        mtlVertexDescriptor.attributes[0].offset = 0
+        mtlVertexDescriptor.attributes[0].bufferIndex = 0
+        
+        mtlVertexDescriptor.layouts[0].stride = 8
+        mtlVertexDescriptor.layouts[0].stepRate = 1
+        mtlVertexDescriptor.layouts[0].stepFunction = MTLVertexStepFunction.perVertex
+
+        return mtlVertexDescriptor
+    }
+
+    func buildRenderPipelineWithDevice(device: MTLDevice,
                                              metalKitView: MTKView,
-                                             mtlVertexDescriptor: MTLVertexDescriptor) throws -> MTLRenderPipelineState {
+                                             mtlVertexDescriptor: MTLVertexDescriptor) {
         /// Build a render state pipeline object
         
-        let library = device.makeDefaultLibrary()
+
         
+        
+        
+/*
         let vertexFunction = library?.makeFunction(name: "vertexShader")
         let fragmentFunction = library?.makeFunction(name: "fragmentShader")
         
@@ -176,7 +261,8 @@ class Renderer: NSObject, MTKViewDelegate {
         pipelineDescriptor.depthAttachmentPixelFormat = metalKitView.depthStencilPixelFormat
         pipelineDescriptor.stencilAttachmentPixelFormat = metalKitView.depthStencilPixelFormat
         
-        return try device.makeRenderPipelineState(descriptor: pipelineDescriptor)
+        pipelineState = device.makeRenderPipelineState(descriptor: pipelineDescriptor)
+*/
     }
     
     class func buildMesh(device: MTLDevice,
@@ -243,6 +329,20 @@ class Renderer: NSObject, MTKViewDelegate {
         uniforms[0].modelViewMatrix = simd_mul(viewMatrix, modelMatrix)
         rotation += 0.01
     }
+
+    func draw_set3(in view: MTKView, renderEncoder : MTLRenderCommandEncoder) {
+        renderEncoder.pushDebugGroup("draw_set3")
+
+        renderEncoder.setStencilReferenceValue(3)
+        renderEncoder.setRenderPipelineState(pipelineStateSet3)
+        renderEncoder.setDepthStencilState(depthStateSet3)
+
+        renderEncoder.setVertexBuffer(set3VertexBuffer, offset: 0, index: 0)
+        
+        renderEncoder.drawPrimitives(type: .triangle, vertexStart: 0, vertexCount: 6)
+        
+        renderEncoder.popDebugGroup()
+    }
     
     func draw_imp(in view: MTKView, renderEncoder : MTLRenderCommandEncoder) {
         /// Final pass rendering code here
@@ -253,10 +353,6 @@ class Renderer: NSObject, MTKViewDelegate {
         renderEncoder.setCullMode(.back)
         
         renderEncoder.setFrontFacing(.counterClockwise)
-        
-        renderEncoder.setRenderPipelineState(pipelineState)
-        
-        renderEncoder.setDepthStencilState(depthState)
         
         renderEncoder.setVertexBuffer(dynamicUniformBuffer, offset:uniformBufferOffset, index: BufferIndex.uniforms.rawValue)
         renderEncoder.setFragmentBuffer(dynamicUniformBuffer, offset:uniformBufferOffset, index: BufferIndex.uniforms.rawValue)
@@ -284,9 +380,6 @@ class Renderer: NSObject, MTKViewDelegate {
         }
         
         renderEncoder.popDebugGroup()
-        
-        renderEncoder.endEncoding()
-        
     }
     
     func draw(in view: MTKView) {
@@ -310,8 +403,25 @@ class Renderer: NSObject, MTKViewDelegate {
             let renderPassDescriptor = view.currentRenderPassDescriptor
             
             if let renderPassDescriptor = renderPassDescriptor, let renderEncoder = commandBuffer.makeRenderCommandEncoder(descriptor: renderPassDescriptor) {
-                draw_imp(in: view,
-                         renderEncoder : renderEncoder)
+
+                // set 3
+                draw_set3(in: view, renderEncoder : renderEncoder)
+
+/*
+                // draw area2 and set its stencil to 2, skip stencil values 3
+                renderEncoder.setStencilReferenceValue(2)
+                renderEncoder.setRenderPipelineState(pipelineStateSet2)
+                renderEncoder.setDepthStencilState(depthStateSet2)
+                draw_imp(in: view, renderEncoder : renderEncoder)
+
+                // draw area1 whose stencil values are 3
+                renderEncoder.setStencilReferenceValue(3)
+                renderEncoder.setRenderPipelineState(pipelineStateRender3)
+                renderEncoder.setDepthStencilState(depthStateRender3)
+                draw_imp(in: view, renderEncoder : renderEncoder)
+*/
+                
+                renderEncoder.endEncoding()
             }
             
             if let drawable = view.currentDrawable {

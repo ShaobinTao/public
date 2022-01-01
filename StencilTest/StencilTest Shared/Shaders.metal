@@ -17,6 +17,11 @@ using namespace metal;
 
 typedef struct
 {
+    float2 position [[attribute(0)]];
+} VertexSet3;
+
+typedef struct
+{
     float3 position [[attribute(VertexAttributePosition)]];
     float2 texCoord [[attribute(VertexAttributeTexcoord)]];
 } Vertex;
@@ -50,4 +55,18 @@ fragment float4 fragmentShader(ColorInOut in [[stage_in]],
     half4 colorSample   = colorMap.sample(colorSampler, in.texCoord.xy);
 
     return float4(colorSample);
+}
+
+vertex ColorInOut vertexShaderSet3(VertexSet3 in [[stage_in]])
+{
+    ColorInOut out;
+
+    out.position = float4(in.position, 1.0);
+
+    return out;
+}
+
+fragment float4 fragmentShaderSet3(ColorInOut in [[stage_in]])
+{
+    return float4(1.0, 0, 0, 1);
 }
