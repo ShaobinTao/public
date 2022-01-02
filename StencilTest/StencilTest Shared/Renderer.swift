@@ -60,7 +60,7 @@ class Renderer: NSObject, MTKViewDelegate {
     let commandQueue: MTLCommandQueue
     var dynamicUniformBuffer: MTLBuffer
     var pipelineStateSet3: MTLRenderPipelineState
-//    var pipelineState: MTLRenderPipelineState
+    var pipelineStateSet2: MTLRenderPipelineState
 
     var set3VertexBuffer: MTLBuffer
     
@@ -100,12 +100,12 @@ class Renderer: NSObject, MTKViewDelegate {
 
         // set3 vertex data. 0s are padding
         let vertexDataSet3: [Float] = [
-            -0.5,  0.5,
-            -0.5, -0.5,
-             0.5,  0.5,
-             0.5,  0.5,
-            -0.5, -0.5,
-             0.5, -0.5
+            -0.2,  0.2,
+            -0.2, -0.2,
+             0.2,  0.2,
+             0.2,  0.2,
+            -0.2, -0.2,
+             0.2, -0.2
         ]
 
         let dataSize = vertexDataSet3.count * MemoryLayout<Float>.size
@@ -142,10 +142,12 @@ class Renderer: NSObject, MTKViewDelegate {
         // depthStateSet2
         stencilDescriptor.stencilCompareFunction = .equal
         stencilDescriptor.depthStencilPassOperation = .replace
-        stencilDescriptor.readMask = 0b11
+        stencilDescriptor.readMask = 0b01
         
         depthStateDescriptor.depthCompareFunction = MTLCompareFunction.less
         depthStateDescriptor.isDepthWriteEnabled = true
+        depthStateDescriptor.backFaceStencil = stencilDescriptor
+        depthStateDescriptor.frontFaceStencil = stencilDescriptor
         guard let state2 = device.makeDepthStencilState(descriptor:depthStateDescriptor) else { return nil }
         depthStateSet2 = state2
 
@@ -192,6 +194,18 @@ class Renderer: NSObject, MTKViewDelegate {
         
         try! pipelineStateSet3 = device.makeRenderPipelineState(descriptor: pipelineDescriptor)
 
+        
+        let vertexFunctionSet2 = library?.makeFunction(name: "vertexShader")
+        let fragmentFunctionSet2 = library?.makeFunction(name: "fragmentShader")
+        
+        pipelineDescriptor.label = "RenderPipelineSet2"
+        pipelineDescriptor.vertexFunction = vertexFunctionSet2
+        pipelineDescriptor.fragmentFunction = fragmentFunctionSet2
+        pipelineDescriptor.vertexDescriptor = mtlVertexDescriptor
+        pipelineDescriptor.inputPrimitiveTopology = .unspecified
+
+        try! pipelineStateSet2 = device.makeRenderPipelineState(descriptor: pipelineDescriptor)
+        
         super.init()
     }
     
@@ -246,23 +260,6 @@ class Renderer: NSObject, MTKViewDelegate {
         
         
         
-/*
-        let vertexFunction = library?.makeFunction(name: "vertexShader")
-        let fragmentFunction = library?.makeFunction(name: "fragmentShader")
-        
-        let pipelineDescriptor = MTLRenderPipelineDescriptor()
-        pipelineDescriptor.label = "RenderPipeline"
-        pipelineDescriptor.sampleCount = metalKitView.sampleCount
-        pipelineDescriptor.vertexFunction = vertexFunction
-        pipelineDescriptor.fragmentFunction = fragmentFunction
-        pipelineDescriptor.vertexDescriptor = mtlVertexDescriptor
-        
-        pipelineDescriptor.colorAttachments[0].pixelFormat = metalKitView.colorPixelFormat
-        pipelineDescriptor.depthAttachmentPixelFormat = metalKitView.depthStencilPixelFormat
-        pipelineDescriptor.stencilAttachmentPixelFormat = metalKitView.depthStencilPixelFormat
-        
-        pipelineState = device.makeRenderPipelineState(descriptor: pipelineDescriptor)
-*/
     }
     
     class func buildMesh(device: MTLDevice,
@@ -407,13 +404,13 @@ class Renderer: NSObject, MTKViewDelegate {
                 // set 3
                 draw_set3(in: view, renderEncoder : renderEncoder)
 
-/*
                 // draw area2 and set its stencil to 2, skip stencil values 3
                 renderEncoder.setStencilReferenceValue(2)
                 renderEncoder.setRenderPipelineState(pipelineStateSet2)
                 renderEncoder.setDepthStencilState(depthStateSet2)
                 draw_imp(in: view, renderEncoder : renderEncoder)
 
+/*
                 // draw area1 whose stencil values are 3
                 renderEncoder.setStencilReferenceValue(3)
                 renderEncoder.setRenderPipelineState(pipelineStateRender3)

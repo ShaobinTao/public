@@ -57,6 +57,7 @@ fragment float4 fragmentShader(ColorInOut in [[stage_in]],
     return float4(colorSample);
 }
 
+
 vertex ColorInOut vertexShaderSet3(VertexSet3 in [[stage_in]])
 {
     ColorInOut out;
