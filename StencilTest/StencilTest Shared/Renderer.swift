@@ -120,7 +120,7 @@ class Renderer: NSObject, MTKViewDelegate {
         
         uniforms = UnsafeMutableRawPointer(dynamicUniformBuffer.contents()).bindMemory(to:Uniforms.self, capacity:1)
         
-        metalKitView.depthStencilPixelFormat = MTLPixelFormat.depth32Float_stencil8
+        metalKitView.depthStencilPixelFormat = MTLPixelFormat.depth24Unorm_stencil8
         metalKitView.colorPixelFormat = MTLPixelFormat.bgra8Unorm_srgb
         metalKitView.sampleCount = 1
         
@@ -153,11 +153,14 @@ class Renderer: NSObject, MTKViewDelegate {
 
         // depthStateRender3
         stencilDescriptor.stencilCompareFunction = .equal
-        stencilDescriptor.depthStencilPassOperation = .replace
+        stencilDescriptor.depthStencilPassOperation = .decrementClamp
         stencilDescriptor.readMask = 0b11
+        stencilDescriptor.writeMask = 0b11
         
-        depthStateDescriptor.depthCompareFunction = MTLCompareFunction.less
+        depthStateDescriptor.depthCompareFunction = MTLCompareFunction.always
         depthStateDescriptor.isDepthWriteEnabled = true
+        depthStateDescriptor.backFaceStencil = stencilDescriptor
+        depthStateDescriptor.frontFaceStencil = stencilDescriptor
         guard let state4 = device.makeDepthStencilState(descriptor:depthStateDescriptor) else { return nil }
         depthStateRender3 = state4
         
@@ -345,9 +348,7 @@ class Renderer: NSObject, MTKViewDelegate {
         /// Final pass rendering code here
         renderEncoder.label = "Primary Render Encoder"
         
-        renderEncoder.pushDebugGroup("Draw Box")
         
-        renderEncoder.setCullMode(.back)
         
         renderEncoder.setFrontFacing(.counterClockwise)
         
@@ -375,8 +376,6 @@ class Renderer: NSObject, MTKViewDelegate {
                                                 indexBufferOffset: submesh.indexBuffer.offset)
             
         }
-        
-        renderEncoder.popDebugGroup()
     }
     
     func draw(in view: MTKView) {
@@ -405,19 +404,23 @@ class Renderer: NSObject, MTKViewDelegate {
                 draw_set3(in: view, renderEncoder : renderEncoder)
 
                 // draw area2 and set its stencil to 2, skip stencil values 3
+                renderEncoder.pushDebugGroup("Set 2")
+                renderEncoder.setCullMode(.back)
                 renderEncoder.setStencilReferenceValue(2)
                 renderEncoder.setRenderPipelineState(pipelineStateSet2)
                 renderEncoder.setDepthStencilState(depthStateSet2)
                 draw_imp(in: view, renderEncoder : renderEncoder)
+                renderEncoder.popDebugGroup()
 
-/*
                 // draw area1 whose stencil values are 3
+                renderEncoder.pushDebugGroup("draw on 3")
+                renderEncoder.setCullMode(.front)
                 renderEncoder.setStencilReferenceValue(3)
-                renderEncoder.setRenderPipelineState(pipelineStateRender3)
+                renderEncoder.setRenderPipelineState(pipelineStateSet2)
                 renderEncoder.setDepthStencilState(depthStateRender3)
                 draw_imp(in: view, renderEncoder : renderEncoder)
-*/
-                
+                renderEncoder.popDebugGroup()
+
                 renderEncoder.endEncoding()
             }
             
