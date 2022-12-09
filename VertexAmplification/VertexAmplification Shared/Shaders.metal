@@ -25,9 +25,12 @@ typedef struct
 {
     float4 position [[position]];
     float2 texCoord;
+    ushort viewport [[viewport_array_index]]; // Implicitly shared.
 } ColorInOut;
 
 vertex ColorInOut vertexShader(Vertex in [[stage_in]],
+                               ushort amp_id [[amplification_id]],
+                               ushort amp_count [[amplification_count]],
                                constant Uniforms & uniforms [[ buffer(BufferIndexUniforms) ]])
 {
     ColorInOut out;
@@ -35,11 +38,14 @@ vertex ColorInOut vertexShader(Vertex in [[stage_in]],
     float4 position = float4(in.position, 1.0);
     out.position = uniforms.projectionMatrix * uniforms.modelViewMatrix * position;
     out.texCoord = in.texCoord;
+    out.viewport = 0;
 
     return out;
 }
 
 fragment float4 fragmentShader(ColorInOut in [[stage_in]],
+                               ushort amp_id [[amplification_id]],
+                               ushort amp_count [[amplification_count]],
                                constant Uniforms & uniforms [[ buffer(BufferIndexUniforms) ]],
                                texture2d<half> colorMap     [[ texture(TextureIndexColor) ]])
 {

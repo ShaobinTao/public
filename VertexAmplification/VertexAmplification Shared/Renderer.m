@@ -91,6 +91,7 @@ static const NSUInteger MaxBuffersInFlight = 3;
     pipelineStateDescriptor.colorAttachments[0].pixelFormat = view.colorPixelFormat;
     pipelineStateDescriptor.depthAttachmentPixelFormat = view.depthStencilPixelFormat;
     pipelineStateDescriptor.stencilAttachmentPixelFormat = view.depthStencilPixelFormat;
+    [pipelineStateDescriptor setMaxVertexAmplificationCount:2];
 
     NSError *error = NULL;
     _pipelineState = [_device newRenderPipelineStateWithDescriptor:pipelineStateDescriptor error:&error];
@@ -230,6 +231,19 @@ static const NSUInteger MaxBuffersInFlight = 3;
                                   offset:0
                                  atIndex:BufferIndexUniforms];
 
+        MTLViewport viewports[2] =  {{0  ,  0, 1389, 1284, 0, 1},
+                                     {1389, 0, 1389, 1284, 0, 1}};
+
+        [renderEncoder setViewports:viewports count:2];
+
+        MTLVertexAmplificationViewMapping mappings[2];
+        mappings[0].viewportArrayIndexOffset = 0;
+        mappings[0].renderTargetArrayIndexOffset = 0;
+        mappings[1].viewportArrayIndexOffset = 1;
+        mappings[1].renderTargetArrayIndexOffset = 0;
+
+        [renderEncoder setVertexAmplificationCount:2 viewMappings: mappings];
+        
         for (NSUInteger bufferIndex = 0; bufferIndex < _mesh.vertexBuffers.count; bufferIndex++)
         {
             MTKMeshBuffer *vertexBuffer = _mesh.vertexBuffers[bufferIndex];
