@@ -15,5 +15,6 @@
   
   the conic has 5 DOF. (totally 6 coeff, but it can be divided by one of the coefficients to get 5). In other words, 5 points define a conic
 ## P31
+  the line l tangent to C at a point x on C is given b l = C x
   
    
