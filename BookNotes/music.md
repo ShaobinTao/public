@@ -6,5 +6,4 @@
 - Movable open Emaj/Emin, root at 6th string <br/>
 - Movale Cmajor, 3rd fret, 2/3/4 strings(postion 5), root at 5th string
   Movale Cminor, 3rd fret, 2(pos 4), 3/4 strings(postion 5), root at 5th string
-  ![alt text](..//BookNotes/images/open_chords.png)
-
+  ![Open Chords](..//BookNotes/images/open_chords.png)
