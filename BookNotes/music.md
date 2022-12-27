@@ -4,5 +4,5 @@
   Movale Cminor, 3rd fret, 2(pos 4), 3/4 strings(postion 5), root at 5th string
   
   
-  ![alt text](https://github.com/ShaobinTao/public/blob/master/c_maj.png?raw=true)
+  ![alt text](https://github.com/ShaobinTao/public/blob/master/c_maj.png)
 
