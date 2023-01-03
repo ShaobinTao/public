@@ -1,3 +1,11 @@
+- TO BUY
+  - 1st choice: used MIM strat/tele
+  - 2nd choice: Highway1 strat
+  - 
+
+
+
+
 - Note wheel <br/>
   ![alt text](../BookNotes/images/NoteWheel.png)
 
