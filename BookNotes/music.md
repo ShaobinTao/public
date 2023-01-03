@@ -1,7 +1,8 @@
 # TO BUY
   - 1st choice: used MIM strat/tele
   - 2nd choice: Highway1 strat
-  - 
+  - I’ve found local music shops much more honest and helpful than Guitar Center. I usually go to Starving Musician, but I think people love Gryphon in Palo Alto too
+
 
 
 
