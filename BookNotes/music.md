@@ -36,3 +36,27 @@
 - 
 
 
+https://github.com/ShaobinTao/public/blob/master/c_maj.png?raw=true
+https://github.com/ShaobinTao/public/blob/master/c_maj.png
+
+http://visionguitar.com/
+https://www.youtube.com/watch?v=ctx86V-GI8A
+https://www.youtube.com/watch?v=sAeXskZHC2o&t=1201s
+https://apps.apple.com/us/app/roxsyn-guitar-synthesizer/id1472450599
+https://apogeedigital.com/products/jam
+https://tonypolecastro.com/
+http://justinguitar.com/
+https://fretastic.com/guitar
+https://istweb.apple.com/logic-pro-x    free
+https://www.premierguitar.com/lessons/beginner/basic-chord-progressions
+Gryphon Strings in Palo Alto
+princeton reverb
+https://source.apple.com/cupertino/en/content/679
+https://prsguitars.com/electrics/model/se_pauls_guitar_2021
+https://www.sweetwater.com/store/detail/SM57--shure-sm57-cardioid-dynamic-instrument-microphone
+ Focusrite Scarlett 2i2  interface
+ https://www.amazon.com/Behringer-UMC202HD-BEHRINGER-U-PHORIA-2-Channel/dp/B00QHURUBE/ref=sr_1_2?crid=3PIB7VO2R9FDQ&keywords=behringer%2Bumc202hd&qid=1646058368&sprefix=behringer%2Bumc202hd%2Caps%2C129&sr=8-2&th=1+
+ https://www.sweetwater.com/insync/best-acoustic-guitars-under-1000/
+https://www.audacityteam.org/
+
+
