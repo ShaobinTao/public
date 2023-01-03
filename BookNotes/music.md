@@ -1,4 +1,4 @@
-- TO BUY
+# TO BUY
   - 1st choice: used MIM strat/tele
   - 2nd choice: Highway1 strat
   - 
