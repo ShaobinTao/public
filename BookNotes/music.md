@@ -42,7 +42,15 @@
 -etude: 练习曲
 -
 - major chord -> minor chord: flat the 3rd
-- 
+
+
+
+https://musicstudent101.com/episodes.html
+https://www.oolimo.com/index.php
+https://www.youtube.com/watch?v=XNhS2y9LyRo
+https://source.apple.com/cupertino/en/content/657
+https://youtube.com/playlist?list=PLB04Q_-DchOO2pfeUB7rT2imLd9jeOFzz
+
 
 
 https://github.com/ShaobinTao/public/blob/master/c_maj.png?raw=true
