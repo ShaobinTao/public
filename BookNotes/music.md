@@ -29,7 +29,7 @@
 - A major chord: bottom + a major 3rd + a minor 3rd
 - A minor chord: bottom + a minor 3rd + a major 3rd
 - A diminished chord:  bottom + a minor 3rd + a minor 3rd. (C dim or C°) contains the notes C, Eb and Gb. It is produced by taking the 1st, flat 3rd and flat 5th notes of the C Major scale.
-- Augmented Chord: bottom + two major 3rd(s). For example C_aug/C+  is C - E - G#
+- Augmented Chord: bottom + two major 3rd(s). For example C_aug/C+  is C - E - G# (basically 1 - 3 - 5#)
 - 
 - 1st popular chord progression is 1->4->5. For example for g major key, it is G(1) -> A(2) -> B(3) -> C(4) -> D(5). 1->4->5 would be G -> C -> D
 - 2nd popular chord progression is 1->5->4. For example for g major key, it is G(1) -> A(2) -> B(3) -> C(4) -> D(5). 1->5->4 would be G -> D -> C
@@ -75,5 +75,6 @@ https://www.sweetwater.com/store/detail/SM57--shure-sm57-cardioid-dynamic-instru
  https://www.amazon.com/Behringer-UMC202HD-BEHRINGER-U-PHORIA-2-Channel/dp/B00QHURUBE/ref=sr_1_2?crid=3PIB7VO2R9FDQ&keywords=behringer%2Bumc202hd&qid=1646058368&sprefix=behringer%2Bumc202hd%2Caps%2C129&sr=8-2&th=1+
  https://www.sweetwater.com/insync/best-acoustic-guitars-under-1000/
 https://www.audacityteam.org/
+https://theacousticguitarist.com/
 
 
