@@ -3,6 +3,7 @@
   - 2nd choice: Highway1 strat
   - I’ve found local music shops much more honest and helpful than Guitar Center. I usually go to Starving Musician, but I think people love Gryphon in Palo Alto too
 
+https://reverb.com/p/fender-custom-shop-danny-gatton-telecaster had diamonds on the side markers that were slightly raised 
 
 
 
