@@ -1,5 +1,17 @@
 
 
+<<*** AnIntroductionToProjectiveGeometry-Filon ***>>
+
+- Ceva's thorem:  P39
+
+- Menelaus's Theorem: P40
+
+- The pole of perspective is a concept in projective geometry that refers to a point that represents the center of projection for a given perspective transformation.
+
+
+
+<<*** TheRealProjectivePlane_3rd_Coxeter ***>>
+
 - Desargues's two-triangle theorem. If two tris have corresponding vertices joined by concurrent lines, then the intersections of the corresponding sides are collinear.
 
 - Pascal's theorem: if a hexagon is inscribed in a conic, the pairs of opposite sides intersect in three collinear points
