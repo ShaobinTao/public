@@ -78,4 +78,12 @@ https://www.sweetwater.com/store/detail/SM57--shure-sm57-cardioid-dynamic-instru
 https://www.audacityteam.org/
 https://theacousticguitarist.com/
 
+- Amplifier <br/>
+	Yamaha THR30iiA
+	Boss Katana
+	Fender (no recording)
+	adorama (has apple discount)
+  Spark
+  
+ 
 
