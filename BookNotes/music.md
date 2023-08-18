@@ -45,6 +45,7 @@ https://reverb.com/p/fender-custom-shop-danny-gatton-telecaster had diamonds on 
 - major chord -> minor chord: flat the 3rd
 
 
+https://truefire.com/online-guitar-lessons
 
 https://musicstudent101.com/episodes.html
 https://www.oolimo.com/index.php
