@@ -1,1 +1,2 @@
-- animal metabolic rate scales with body size logarithmatically against body mass 
+- Kleiber's law(3/4 law of metabolism): animal metabolic rate = K * (body mass)^(3/4)
+
