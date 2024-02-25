@@ -108,7 +108,7 @@ If somebody tell you to play a blues song in key D, likely the song would probab
 - etude: 练习曲
 - Open chord/open-position chord/cowboy chord
 </br>
-<img src="..//BookNotes/images/all-open-chords.jpg" alt="All open chords" width="400" height="200">
+<img src="..//BookNotes/images/all-open-chords.png" alt="All open chords" width="360" height="100">
 </br>
 - riff: improvisation
 - tonic: root/first note of any scale
