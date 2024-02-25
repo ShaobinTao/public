@@ -1,4 +1,4 @@
-## Notes
+## Single Notes
 - Note wheel <br/> <img src="../BookNotes/images/NoteWheel.png" width="400" height="400">
 
 - diminished fifth: spans 6 semitones, such as C -> Gb
@@ -8,6 +8,7 @@
 - major seventh: spans 11 semitones(C to B)   C -> (E) -(G) -> B
 - A triplet is three beats taking up the same space as two beats.
 
+
 ## Scales
 - major pentatonic: 1, 2, 3, 5, and 6 of the major scale
 - minor pentatonic: 1, 3, 4, 5, and 7 of the natural minor scale
@@ -15,20 +16,46 @@
 
 
 ## Chords
-- A diminished chord:  root + a minor 3rd + a diminished 5th. Cdim =  C, Eb + Gb
-- A minor chord:       root + a minor 3rd + a perfect 5th. Cminor = C + Eb + G
-- A major chord:       root + a major 3rd + a perfect 5th. Cmajor = C + E  + G
-- Augmented Chord:     root + a major 3rd + a augmented 5th. C_aug/C+ = C + E + G#
+- A diminished chord(dim):  root + a minor 3rd + a diminished 5th. Cdim =  C, Eb + Gb
+- A minor chord(m):         root + a minor 3rd + a perfect 5th. Cminor = C + Eb + G
+- A major chord:            root + a major 3rd + a perfect 5th. Cmajor = C + E  + G
+- Augmented Chord(aug or +):root + a major 3rd + a augmented 5th. C_aug/C+ = C + E + G#
+
+Table: Intervals  between Triad notes
+| Root to third  | third to fifth | triad type |
+| ------------- | ------------- | - |
+| major 3rd  | minor 3rd  | major |
+| minor 3rd  | major 3rd  | minor |
+| major 3rd  | major 3rd  | Augmented |
+| minor 3rd  | minor 3rd  | Diminished |
+  
 - power chord(C5): means the chord has only 1st and 5th note from the scale. popular in rock
-
-- dominant seventh/major minor seventh chord: root + major third + perfect fifth + minor seventh
-
+- suspended chord(sus): usually(sus4)       root + perfect 4th + perfect 5th
+  	                occasionally(sus2): root + major 2nd   + perfect 5th
+- Sixths: C6 = Cmajor + A(the sixth note of the major scale)
+- Seven types of Seventh
+	- dominant seventh(C7): root + major 3rd + perfect 5th + flat 7th(a minor 3rd up from the 5th, Bb)
+ 	- major seventh(Cmaj7): root + major 3rd + perfect 5th + maj  7th(a major 3rd up from the 5th, B)
+ 	- minor seventh(Cmin7): root + minor 3rd + perfect 5th + flat 7th
+ 	- minor major seventh(Am(maj7)): root + minor 3rd + perfect 5th + maj 7th
+	- aug seventh(D7#5):    root + major 3rd + aug 5th + flat 7th
+ 	- diminished 7th(dim7): root + minor 3rd + diminished 5th + flat flat 7th(6th)
+ 	- half diminished 7th(Am7(b5): root + minor 3rd + diminished 5th + flat 7th
+  - Adding On(add9, add11)
+  	- add9:			root + major 3rd + perfect 5th + major 9th
+  	- add11:		root + major 3rd + perfect 5th + major 11th
+  - Piling On
+  	- any "9" chord:	root + major 3rd + perfect 5th + flat 7th + maj 9th
+  	- any "maj9" chord:	root + major 3rd + perfect 5th + maj  7th + maj 9th
+ 	- C11:			C E G Bb D F
+  - 
+ 
 - ?? Movable open Emaj/Emin, root at 6th string <br/>
 - ?? Movale Cmajor, 3rd fret, 2/3/4 strings(postion 5), root at 5th string
 - ?? Movale Cminor, 3rd fret, 2(pos 4), 3/4 strings(postion 5), root at 5th string
 
 
-   </br>
+  </br>
   <img src="..//BookNotes/images/open_chords.png" alt="Open Chords" width="500" height="500">
   </br>
 
@@ -56,6 +83,20 @@ https://reverb.com/p/fender-custom-shop-danny-gatton-telecaster had diamonds on 
 -etude: 练习曲
 - down/up the fretboard means the pitches will go lower/higher;
 - Across refers to taking the inversions from the higher-pitched strings to the lower-pitched strings.
+- Diatonic: 全音阶
+- Diatonic chord: chords formed with the notes of a single major scale. For example, in the key of C major, F maj(F-A-C) and Emin(E-G-B) would be diatonic to that key. But Dmaj(D-F#-A) is not since F# is not a note of the C maj scale.
+
+For Key C major, all its diatonic chords would be (roman numbers in the left col means degrees of the diatonic chords)
+</br>
+<img src="..//BookNotes/images/diatonic_of_Cmaj.jpg" alt="Diatonic Chords of C" width="400" height="200">
+</br>
+Noted pattern: i/iv/v are always major chord; iii/vi are always minor; vii will always be diminished. 
+
+Based on above approach, all diatonic chords for all keys are 
+</br>
+<img src="..//BookNotes/images/diatonic_of_allkeys.jpg" alt="Diatonic Chords of all keys" width="425" height="310">
+</br>
+
 
   
 ## Web References
