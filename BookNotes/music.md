@@ -5,18 +5,24 @@
 
 https://reverb.com/p/fender-custom-shop-danny-gatton-telecaster had diamonds on the side markers that were slightly raised 
 
-
-
-
+# Notes
 - Note wheel <br/>
   ![alt text](../BookNotes/images/NoteWheel.png)
 
-- power chord(C5): means the chord has 1st and 5th note from the scale. popular in rock
+- diminished fifth: spans 6 semitones, such as C -> Gb
 - perfect fifth(P5): spans 7 semitones, such as C -> G
-- diminished fifth: spans 6 semitones
-- augmented fifth: spans 8 semitones
-- minor seventh: spans 10 semitones
+- augmented fifth: spans 8 semitones, such as C -> G#
+- minor seventh: spans 10 semitones, sucn as C -> A#
+- major seventh: spans 11 semitones(C to B)   C -> (E) -(G) -> B
+
+# Scales
+- A diminished chord:  root + a minor 3rd + a diminished 5th. Cdim =  C, Eb + Gb
+- A minor chord:       root + a minor 3rd + a perfect 5th. Cminor = C + Eb + G
+- A major chord:       root + a major 3rd + a perfect 5th. Cmajor = C + E  + G
+- Augmented Chord:     root + a major 3rd + a augmented 5th. C_aug/C+ = C + E + G#
+
 - dominant seventh/major minor seventh chord: root + major third + perfect fifth + minor seventh
+- power chord(C5): means the chord has 1st and 5th note from the scale. popular in rock
 
 
 - Movable open Emaj/Emin, root at 6th string <br/>
@@ -27,10 +33,6 @@ https://reverb.com/p/fender-custom-shop-danny-gatton-telecaster had diamonds on 
 - major pentatonic: 1, 2, 3, 5, and 6 of the major scale
 - minor pentatonic: 1, 3, 4, 5, and 7 of the natural minor scale
 - 
-- A major chord: bottom + a major 3rd + a minor 3rd
-- A minor chord: bottom + a minor 3rd + a major 3rd
-- A diminished chord:  bottom + a minor 3rd + a minor 3rd. (C dim or C°) contains the notes C, Eb and Gb. It is produced by taking the 1st, flat 3rd and flat 5th notes of the C Major scale.
-- Augmented Chord: bottom + two major 3rd(s). For example C_aug/C+  is C - E - G# (basically 1 - 3 - 5#)
 - 
 - 1st popular chord progression is 1->4->5. For example for g major key, it is G(1) -> A(2) -> B(3) -> C(4) -> D(5). 1->4->5 would be G -> C -> D
 - 2nd popular chord progression is 1->5->4. For example for g major key, it is G(1) -> A(2) -> B(3) -> C(4) -> D(5). 1->5->4 would be G -> D -> C
