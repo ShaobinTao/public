@@ -1,11 +1,4 @@
-# TO BUY
-  - 1st choice: used MIM strat/tele
-  - 2nd choice: Highway1 strat
-  - I’ve found local music shops much more honest and helpful than Guitar Center. I usually go to Starving Musician, but I think people love Gryphon in Palo Alto too
-
-https://reverb.com/p/fender-custom-shop-danny-gatton-telecaster had diamonds on the side markers that were slightly raised 
-
-# Notes
+## Notes
 - Note wheel <br/> <img src="../BookNotes/images/NoteWheel.png" width="400" height="400">
 
 - diminished fifth: spans 6 semitones, such as C -> Gb
@@ -13,38 +6,59 @@ https://reverb.com/p/fender-custom-shop-danny-gatton-telecaster had diamonds on 
 - augmented fifth: spans 8 semitones, such as C -> G#
 - minor seventh: spans 10 semitones, sucn as C -> A#
 - major seventh: spans 11 semitones(C to B)   C -> (E) -(G) -> B
+- A triplet is three beats taking up the same space as two beats.
 
-# Scales
+## Scales
+- major pentatonic: 1, 2, 3, 5, and 6 of the major scale
+- minor pentatonic: 1, 3, 4, 5, and 7 of the natural minor scale
+- 
+
+
+## Chords
 - A diminished chord:  root + a minor 3rd + a diminished 5th. Cdim =  C, Eb + Gb
 - A minor chord:       root + a minor 3rd + a perfect 5th. Cminor = C + Eb + G
 - A major chord:       root + a major 3rd + a perfect 5th. Cmajor = C + E  + G
 - Augmented Chord:     root + a major 3rd + a augmented 5th. C_aug/C+ = C + E + G#
+- power chord(C5): means the chord has only 1st and 5th note from the scale. popular in rock
 
 - dominant seventh/major minor seventh chord: root + major third + perfect fifth + minor seventh
-- power chord(C5): means the chord has 1st and 5th note from the scale. popular in rock
+
+- ?? Movable open Emaj/Emin, root at 6th string <br/>
+- ?? Movale Cmajor, 3rd fret, 2/3/4 strings(postion 5), root at 5th string
+- ?? Movale Cminor, 3rd fret, 2(pos 4), 3/4 strings(postion 5), root at 5th string
 
 
-- Movable open Emaj/Emin, root at 6th string <br/>
-- Movale Cmajor, 3rd fret, 2/3/4 strings(postion 5), root at 5th string
-  Movale Cminor, 3rd fret, 2(pos 4), 3/4 strings(postion 5), root at 5th string
-  ![Open Chords](..//BookNotes/images/open_chords.png)
+   </br>
+  <img src="..//BookNotes/images/open_chords.png" alt="Open Chords" width="500" height="500">
+  </br>
 
-- major pentatonic: 1, 2, 3, 5, and 6 of the major scale
-- minor pentatonic: 1, 3, 4, 5, and 7 of the natural minor scale
-- 
-- 
+## Chord progression
 - 1st popular chord progression is 1->4->5. For example for g major key, it is G(1) -> A(2) -> B(3) -> C(4) -> D(5). 1->4->5 would be G -> C -> D
 - 2nd popular chord progression is 1->5->4. For example for g major key, it is G(1) -> A(2) -> B(3) -> C(4) -> D(5). 1->5->4 would be G -> D -> C
 - 3rd progression is 1->6->2 or 4->5, found in songs from doo-wop era. For g major key, it is G(1) -> A(2) -> B(3) -> C(4) -> D(5) -> Emin(6). 1->6->2 or 4->5 would be G -> Emin -> A or C -> D
 - 4th progression is 1->5->6->4, a very popular in broadway, hip songs, and rocks.
-- 
-- A triplet is three beats taking up the same space as two beats.
--
-- down/up the fretboard means the pitches will go lower/higher; Across refers to taking the inversions from the higher-pitched strings to the lower-pitched strings.
--etude: 练习曲
--
-- major chord -> minor chord: flat the 3rd
 
+
+## Gears
+  - 1st choice: used MIM strat/tele
+  - 2nd choice: Highway1 strat
+  - I’ve found local music shops much more honest and helpful than Guitar Center. I usually go to Starving Musician, but I think people love Gryphon in Palo Alto too
+
+https://reverb.com/p/fender-custom-shop-danny-gatton-telecaster had diamonds on the side markers that were slightly raised 
+
+- Amplifier <br/>
+	Yamaha THR30iiA
+	Boss Katana
+	Fender (no recording)
+	adorama (has apple discount)
+
+## Vacabularies
+-etude: 练习曲
+- down/up the fretboard means the pitches will go lower/higher;
+- Across refers to taking the inversions from the higher-pitched strings to the lower-pitched strings.
+
+  
+## Web References
 
 https://truefire.com/online-guitar-lessons
 
@@ -81,12 +95,5 @@ https://www.audacityteam.org/
 https://theacousticguitarist.com/
 https://us.abrsm.org/en/  music exam
 
-- Amplifier <br/>
-	Yamaha THR30iiA
-	Boss Katana
-	Fender (no recording)
-	adorama (has apple discount)
-  Spark
-  
  
 
