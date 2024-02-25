@@ -55,10 +55,6 @@ Table: Intervals  between Triad notes
 - ?? Movale Cminor, 3rd fret, 2(pos 4), 3/4 strings(postion 5), root at 5th string
 
 
-  </br>
-  <img src="..//BookNotes/images/open_chords.png" alt="Open Chords" width="500" height="500">
-  </br>
-
 ## Chord progression (by popularies)
 - 1->4->5, For example for g major key, it is G(1) -> A(2) -> B(3) -> C(4) -> D(5). 1->4->5 would be G -> C -> D
 - 1->5->4. For example for g major key, it is G(1) -> A(2) -> B(3) -> C(4) -> D(5). 1->5->4 would be G -> D -> C
@@ -108,7 +104,7 @@ If somebody tell you to play a blues song in key D, likely the song would probab
 - etude: 练习曲
 - Open chord/open-position chord/cowboy chord
 </br>
-<img src="..//BookNotes/images/all-open-chords.png" alt="All open chords" width="360" height="100">
+<img src="..//BookNotes/images/all-open-chords.png" alt="All open chords" width="600" height="600">
 </br>
 - riff: improvisation
 - tonic: root/first note of any scale
