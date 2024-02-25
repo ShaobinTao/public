@@ -59,11 +59,15 @@ Table: Intervals  between Triad notes
   <img src="..//BookNotes/images/open_chords.png" alt="Open Chords" width="500" height="500">
   </br>
 
-## Chord progression
-- 1st popular chord progression is 1->4->5. For example for g major key, it is G(1) -> A(2) -> B(3) -> C(4) -> D(5). 1->4->5 would be G -> C -> D
-- 2nd popular chord progression is 1->5->4. For example for g major key, it is G(1) -> A(2) -> B(3) -> C(4) -> D(5). 1->5->4 would be G -> D -> C
-- 3rd progression is 1->6->2 or 4->5, found in songs from doo-wop era. For g major key, it is G(1) -> A(2) -> B(3) -> C(4) -> D(5) -> Emin(6). 1->6->2 or 4->5 would be G -> Emin -> A or C -> D
-- 4th progression is 1->5->6->4, a very popular in broadway, hip songs, and rocks.
+## Chord progression (by popularies)
+- 1->4->5, For example for g major key, it is G(1) -> A(2) -> B(3) -> C(4) -> D(5). 1->4->5 would be G -> C -> D
+- 1->5->4. For example for g major key, it is G(1) -> A(2) -> B(3) -> C(4) -> D(5). 1->5->4 would be G -> D -> C
+- 1->6->2 or , found in songs from doo-wop era. For g major key, it is G(1) -> A(2) -> B(3) -> C(4) -> D(5) -> Emin(6). 1->6->2 or 4-- 4th progression is 1->5->6->4, a very popular in broadway, hip songs, and rocks.
+>5 would be G -> Emin -> A or C -> D
+- 2->5->1
+- 3->6
+- 4->5 or 4->1
+- 5->1
 
 
 ## Gears
@@ -80,7 +84,10 @@ https://reverb.com/p/fender-custom-shop-danny-gatton-telecaster had diamonds on 
 	adorama (has apple discount)
 
 ## Vacabularies
--etude: 练习曲
+- barre chord: closed/movable chord(封闭和弦);  barre(ballet daner的扶手）
+	- E-shaped barre chord, such as C at 8th fret
+ 	- A-shaped barre chord, such as C at 3fr
+- 
 - down/up the fretboard means the pitches will go lower/higher;
 - Across refers to taking the inversions from the higher-pitched strings to the lower-pitched strings.
 - Diatonic: 全音阶
@@ -92,11 +99,20 @@ For Key C major, all its diatonic chords would be (roman numbers in the left col
 </br>
 Noted pattern: i/iv/v are always major chord; iii/vi are always minor; vii will always be diminished. 
 
-Based on above approach, all diatonic chords for all keys are 
+Based on above approach, all diatonic chords for all keys are(totally 12 signatures/rows)
 </br>
 <img src="..//BookNotes/images/diatonic_of_allkeys.jpg" alt="Diatonic Chords of all keys" width="425" height="310">
 </br>
+If somebody tell you to play a blues song in key D, likely the song would probably just have D-G-A(1->4->5 progression)
 
+- etude: 练习曲
+- Open chord/open-position chord/cowboy chord
+</br>
+<img src="..//BookNotes/images/all-open-chords.jpg" alt="All open chords" width="400" height="200">
+</br>
+- riff: improvisation
+- tonic: root/first note of any scale
+- transpose songs: change the notes/chords from one key to another.
 
   
 ## Web References
