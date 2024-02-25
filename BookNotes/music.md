@@ -6,8 +6,9 @@
 https://reverb.com/p/fender-custom-shop-danny-gatton-telecaster had diamonds on the side markers that were slightly raised 
 
 # Notes
-- Note wheel <br/>
-  ![alt text](../BookNotes/images/NoteWheel.png=100x100)
+- Note wheel <br/> ![](../BookNotes/images/NoteWheel.png =100x100)
+
+
 
 - diminished fifth: spans 6 semitones, such as C -> Gb
 - perfect fifth(P5): spans 7 semitones, such as C -> G
