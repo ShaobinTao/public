@@ -102,7 +102,7 @@ Based on above approach, all diatonic chords for all keys are(totally 12 signatu
 If somebody tell you to play a blues song in key D, likely the song would probably just have D-G-A(1->4->5 progression)
 
 - etude: 练习曲
-- Open chord/open-position chord/cowboy chord
+- Open chord/open-position chord/cowboy chord. D & G shaped chords are too hard to use, usually ignored.
 </br>
 <img src="..//BookNotes/images/all-open-chords.png" alt="All open chords" width="600" height="600">
 </br>
