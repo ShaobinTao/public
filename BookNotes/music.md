@@ -113,7 +113,7 @@ If somebody tell you to play a blues song in key D, likely the song would probab
   
 ## Web References
 
-https://truefire.com/online-guitar-lessons
+https://truefire.com/online-guitar-lessons, Jeff McErlain
 
 https://musicstudent101.com/episodes.html
 https://www.oolimo.com/index.php
