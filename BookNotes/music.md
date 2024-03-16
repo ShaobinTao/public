@@ -7,7 +7,10 @@
 - minor seventh: spans 10 semitones, sucn as C -> A#
 - major seventh: spans 11 semitones(C to B)   C -> (E) -(G) -> B
 - A triplet is three beats taking up the same space as two beats.
-
+- each degree of the scale is given a generic name as well as number. For exmaple, the generic names of C maj are
+  C(tonic), D(super-tonic), E(mediant), F(sub-dominant), G(dominant), A(sub-mediant), B(leading tone),
+  leading tone means it leads the tone back to tonic. for example from B to C. The strength of the V-I chord progression comes from the same leading tone-to-tonic sound existing inside the two chords. The leading tone is heard inside the V chord and connects to the tonic heard inside the I chord. In C maj, V is G and I is C. That is wy G->C progression is very popular.
+  
 
 ## Scales
 - major pentatonic: 1, 2, 3, 5, and 6 of the major scale
