@@ -73,14 +73,19 @@ Table: Intervals  between Triad notes
   - 1st choice: used MIM strat/tele
   - 2nd choice: Highway1 strat
   - I’ve found local music shops much more honest and helpful than Guitar Center. I usually go to Starving Musician, but I think people love Gryphon in Palo Alto too
-
 https://reverb.com/p/fender-custom-shop-danny-gatton-telecaster had diamonds on the side markers that were slightly raised 
-
 - Amplifier <br/>
 	Yamaha THR30iiA
 	Boss Katana
 	Fender (no recording)
 	adorama (has apple discount)
+- strings
+  	- P1: Ernie Ball 9’s on electric and D’Addario 10’s (!!!) for acoustic
+  	- P2: 11s on accoustic, 10s or 11s electric
+  	- P3: 12s on acoustic and 10s on electric
+  	- 
+  
+
 
 ## Vacabularies
 - barre chord: closed/movable chord(封闭和弦);  barre(ballet daner的扶手）
