@@ -156,5 +156,24 @@ https://www.audacityteam.org/
 https://theacousticguitarist.com/
 https://us.abrsm.org/en/  music exam
 
- 
-
+Guitarist rankings.
+John Frusciante (Red Hot Chili Peppers)
+Alex Turner (Arctic Monkeys)
+John Mayer
+Sam Fender
+Jonny Greenwood (Radiohead)
+Chris Shiflett (Foo Fighters)
+Ed O’Brien (Radiohead)
+Taylor Swift
+Tom DeLonge (Blink-182)
+Simon Neil (Biffy Clyro)
+Jim Root (Slipknot)
+Keith Urban
+John 5 (Mötley Crüe)
+Brad Paisley
+Troy Van Leeuwen (Queens Of The Stone Age)
+Albert Hammond Jr. (The Strokes)
+H.E.R.
+Adam Hann (The 1975)
+Ed Sheeran
+Julien Baker
