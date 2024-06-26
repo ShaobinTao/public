@@ -6,6 +6,9 @@
 - augmented fifth: spans 8 semitones, such as C -> G#
 - minor seventh: spans 10 semitones, sucn as C -> A#
 - major seventh: spans 11 semitones(C to B)   C -> (E) -(G) -> B
+- dominant seventh, which is a major triad plus a minor seventh
+- A dominant ninth chord, such as C9, dominant seventh + 9th. C, E, G, B♭, and D
+- A major ninth chord,such as Cmaj9, a major triad, add a major 7th, and then add a major 9th
 - A triplet is three beats taking up the same space as two beats.
 - each degree of the scale is given a generic name as well as number. For exmaple, the generic names of C maj are
   C(tonic), D(super-tonic), E(mediant), F(sub-dominant), G(dominant), A(sub-mediant), B(leading tone),
