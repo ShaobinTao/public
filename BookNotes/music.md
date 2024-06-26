@@ -16,6 +16,8 @@
   
 
 ## Scales
+- major scale:   W W H W W W H
+- minor scale:   W H W W H W W
 - major pentatonic: 1, 2, 3, 5, and 6 of the major scale
 - minor pentatonic: 1, 3, 4, 5, and 7 of the natural minor scale
 - 
