@@ -1,6 +1,6 @@
 
 # follow instructions at https://vulkan-tutorial.com/en/Development_environment#page_MacOS
-
+    to setup up the intiali project
 # a few modifications
     - glfw/glm may not be installed to /use/local/include. run 
         ~ % brew info glfw
