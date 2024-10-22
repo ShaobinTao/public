@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		D764530C2CADF2EA00A8A52B /* libglfw.3.4.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D764530B2CADF2EA00A8A52B /* libglfw.3.4.dylib */; };
 		D764530D2CADF2FD00A8A52B /* libglfw.3.4.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = D764530B2CADF2EA00A8A52B /* libglfw.3.4.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		D7EC60E72CC810460019DD49 /* libglm.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D7EC60E62CC810460019DD49 /* libglm.dylib */; };
+		D7EC60E82CC810460019DD49 /* libglm.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = D7EC60E62CC810460019DD49 /* libglm.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		D7F6369A2CC3719100270534 /* libvulkan.1.3.296.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = D7F636992CC3719100270534 /* libvulkan.1.3.296.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		D7F6369E2CC3721300270534 /* libvulkan.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D7F6369D2CC3721300270534 /* libvulkan.1.dylib */; };
 		D7F6369F2CC3723600270534 /* libvulkan.1.3.296.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D7F636992CC3719100270534 /* libvulkan.1.3.296.dylib */; };
@@ -34,6 +36,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				D7F636A02CC3725700270534 /* libvulkan.1.dylib in Embed Libraries */,
+				D7EC60E82CC810460019DD49 /* libglm.dylib in Embed Libraries */,
 			);
 			name = "Embed Libraries";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -45,6 +48,7 @@
 		D76453072CADF2E200A8A52B /* libvulkan.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libvulkan.1.dylib; path = ../../../VulkanSDK/1.3.290.0/macOS/lib/libvulkan.1.dylib; sourceTree = "<group>"; };
 		D76453092CADF2E600A8A52B /* libvulkan.1.3.290.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libvulkan.1.3.290.dylib; path = ../../../VulkanSDK/1.3.290.0/macOS/lib/libvulkan.1.3.290.dylib; sourceTree = "<group>"; };
 		D764530B2CADF2EA00A8A52B /* libglfw.3.4.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglfw.3.4.dylib; path = ../../../../../opt/homebrew/Cellar/glfw/3.4/lib/libglfw.3.4.dylib; sourceTree = "<group>"; };
+		D7EC60E62CC810460019DD49 /* libglm.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglm.dylib; path = ../../../../../opt/homebrew/Cellar/glm/1.0.1/lib/libglm.dylib; sourceTree = "<group>"; };
 		D7F636992CC3719100270534 /* libvulkan.1.3.296.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libvulkan.1.3.296.dylib; path = ../../../VulkanSDK/1.3.296.0/macOS/lib/libvulkan.1.3.296.dylib; sourceTree = "<group>"; };
 		D7F6369D2CC3721300270534 /* libvulkan.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libvulkan.1.dylib; path = ../../../VulkanSDK/1.3.296.0/macOS/lib/libvulkan.1.dylib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -63,6 +67,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D7F6369E2CC3721300270534 /* libvulkan.1.dylib in Frameworks */,
+				D7EC60E72CC810460019DD49 /* libglm.dylib in Frameworks */,
 				D764530C2CADF2EA00A8A52B /* libglfw.3.4.dylib in Frameworks */,
 				D7F6369F2CC3723600270534 /* libvulkan.1.3.296.dylib in Frameworks */,
 			);
@@ -92,6 +97,7 @@
 		D76453062CADF2E200A8A52B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D7EC60E62CC810460019DD49 /* libglm.dylib */,
 				D7F6369D2CC3721300270534 /* libvulkan.1.dylib */,
 				D764530B2CADF2EA00A8A52B /* libglfw.3.4.dylib */,
 				D76453092CADF2E600A8A52B /* libvulkan.1.3.290.dylib */,
@@ -226,6 +232,7 @@
 					/usr/local/include,
 					/opt/homebrew/Cellar/glfw/3.4/include,
 					/Users/dev/VulkanSDK/1.3.290.0/macOS/include,
+					/opt/homebrew/Cellar/glm/1.0.1/include/glm,
 				);
 				LIBRARY_SEARCH_PATHS = (
 					/Users/dev/VulkanSDK/1.3.296.0/macOS/lib,
@@ -291,6 +298,7 @@
 					/usr/local/include,
 					/opt/homebrew/Cellar/glfw/3.4/include,
 					/Users/dev/VulkanSDK/1.3.290.0/macOS/include,
+					/opt/homebrew/Cellar/glm/1.0.1/include/glm,
 				);
 				LIBRARY_SEARCH_PATHS = (
 					/Users/dev/VulkanSDK/1.3.296.0/macOS/lib,
