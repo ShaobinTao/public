@@ -40,7 +40,6 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES"
-      internalIOSLaunchStyle = "3"
       viewDebuggingEnabled = "No">
       <BuildableProductRunnable
          runnableDebuggingMode = "0">
@@ -55,17 +54,17 @@
       <EnvironmentVariables>
          <EnvironmentVariable
             key = "VK_LAYER_PATH"
-            value = "/Users/dev/VulkanSDK/1.3.296.0/macOS/share/vulkan/explicit_layer.d"
+            value = "/Users/stao/VulkanSDK/1.3.296.0/macOS/share/vulkan/explicit_layer.d"
             isEnabled = "YES">
          </EnvironmentVariable>
          <EnvironmentVariable
             key = "VK_ICD_FILENAMES"
-            value = "/Users/dev/VulkanSDK/1.3.296.0/macOS/share/vulkan/icd.d/MoltenVK_icd.json"
+            value = "/Users/stao/VulkanSDK/1.3.296.0/macOS/share/vulkan/icd.d/MoltenVK_icd.json"
             isEnabled = "YES">
          </EnvironmentVariable>
          <EnvironmentVariable
             key = "DYLD_LIBRARY_PATH"
-            value = "/Users/dev/VulkanSDK/1.3.296.0/macOS/lib"
+            value = "/Users/stao/VulkanSDK/1.3.296.0/macOS/lib"
             isEnabled = "YES">
          </EnvironmentVariable>
       </EnvironmentVariables>
