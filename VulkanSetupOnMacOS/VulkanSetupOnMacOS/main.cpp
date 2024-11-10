@@ -652,8 +652,8 @@ private:
     }
 
     void createGraphicsPipeline() {
-        auto vertShaderCode = readFile("/Users/stao/github/public/VulkanSetupOnMacOS/VulkanSetupOnMacOS/shaders/vert.spv");
-        auto fragShaderCode = readFile("/Users/stao/github/public/VulkanSetupOnMacOS/VulkanSetupOnMacOS/shaders/frag.spv");
+        auto vertShaderCode = readFile("/users/shaobin/github/public/VulkanSetupOnMacOS/VulkanSetupOnMacOS/shaders/vert.spv");
+        auto fragShaderCode = readFile("/users/shaobin/github/public/VulkanSetupOnMacOS/VulkanSetupOnMacOS/shaders/frag.spv");
 
         VkShaderModule vertShaderModule = createShaderModule(vertShaderCode);
         VkShaderModule fragShaderModule = createShaderModule(fragShaderCode);
@@ -816,7 +816,7 @@ private:
 
     void createTextureImage() {
         int texWidth, texHeight, texChannels;
-        stbi_uc* pixels = stbi_load("/Users/stao/github/public/VulkanSetupOnMacOS/VulkanSetupOnMacOS/texture.jpg", &texWidth, &texHeight, &texChannels, STBI_rgb_alpha);
+        stbi_uc* pixels = stbi_load("/users/shaobin/github/public/VulkanSetupOnMacOS/VulkanSetupOnMacOS/texture.jpg", &texWidth, &texHeight, &texChannels, STBI_rgb_alpha);
         VkDeviceSize imageSize = texWidth * texHeight * 4;
 
         if (!pixels) {
