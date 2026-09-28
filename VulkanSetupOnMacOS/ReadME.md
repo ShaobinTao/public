@@ -1,6 +1,6 @@
 
 # follow instructions at https://vulkan-tutorial.com/en/Development_environment#page_MacOS
-    to setup up the intiali project
+    to setup up the initial project
 # a few modifications
     - glfw/glm may not be installed to /use/local/include. run 
         ~ % brew info glfw
@@ -13,6 +13,10 @@
     - In Schedme, also add 
         DYLD_LIBRARY_PATH=/Users/<home dir>/VulkanSDK/1.3.290.0/macOS/lib
         otherwise, you will see run time errors
+
+    - In build settings, update "Header Search Paths", "Library Search Paths"
+
+    - In "Project navigator", update the libs
 
     dyld[81058]: Library not loaded: @rpath/libvulkan.1.dylib
   Referenced from: <E708BF05-CEA5-3CCB-B8BF-F2C4A1C1627E> /Users/dev/Library/Developer/Xcode/DerivedData/vkToDel-bfpbgoktrqnxvyernqcgewtpqqhv/Build/Intermediates.noindex/InstallIntermediates/macosx/InstallableProducts/usr/local/bin/vkToDel
